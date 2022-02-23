@@ -1,11 +1,71 @@
-<html>
-  <head>
-<script type="module">
-import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-</script>    
-    <script>
-      //https://pinkromeo18.github.io/quick-post/      
+
+
+<!DOCTYPE html>
+<html lang="ja" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>upd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <script> </script>
+
+
+</head>
+
+<body translate="no" >
+  <style>
+  body{background:#222;color:ghostwhite;}
+  img{width:100%;height:auto;object-fit:contain;} 
+</style>
+<input id="input" type="file" accept="image/*,text/*"/>
+<pre id="pre"></pre>
+<div id="ed" contenteditable="plaintext-only"></div>
+<button id="btn">submit</button>
+
+  <script src='https://gnjo.github.io/use.js'></script>
+  <script src='https://pinkromeo18.github.io/quick-post/quick-post.js' type="module"></script>
+  
+      <script id="rendered-js" type="module">
+
+;(async () => {
+  var data = "＃";
+  var is = await isfile();
+  console.log(is);
+  if (is) data = await getfile();
+  var el = document.querySelector('#ed');
+  el.textContent = data;
+  var btn = document.querySelector('#btn');
+  btn.onclick = () => {
+    var data = el.textContent;
+    setfile(data);
+  };
+
+})();
+
+var el = document.querySelector('#input');
+var pre = document.querySelector('#pre');
+
+el.onchange = ev => {
+  var files = ev.target.files;
+  for (const file of files) {
+    ;(async file => {
+      //
+      var url = await setimg(file, file.name);
+      var img = new Image();
+      img.src = url;
+      document.body.appendChild(img);
+    })(file);
+  } //  
+};
     </script>
-  </head>
-  <body></body>
+
+  
+
+</body>
+
 </html>
+ 
