@@ -57,7 +57,7 @@ function getopt(token1,token2){
 
 var _opt =getopt("ghp_WjFtZHMWbe2u3v4","Dhr5ziHCR2ufMNi37mp3f");
 
-import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+//import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
 
 async function setimg(content,filename){
   var type='.'+filename.split('.').slice(-1);
