@@ -1,2 +1,2 @@
 # quick-post
-quick-note.js on github repos
+quick-post.js on github repos
