@@ -35,7 +35,10 @@ async function sha1(str) {
 function getopt(token1,token2){
   token1=token1||'',token2=token2||'';
   
-  var url= location.href.slice(0,-1*location.search.length);
+  //var url= location.href.slice(0,-1*location.search.length);
+  var url= location.href;
+  if(location.search.length!=0) url=location.href.slice(0,-1*location.search.length);
+  
   if(/\/$/.test(url)) url=url + 'index.html';
   if(iscodepen()) url="https://pinkromeo18.github.io/quick-post/index.html";
   var ary=url.split('/').filter(d=>d).slice(1)
