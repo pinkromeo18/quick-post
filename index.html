@@ -77,6 +77,9 @@ function getopt(token1,token2){
   o.repo = ary[1];
   o.path = ary[2] + type;
   o.imgpath = 'img/';
+  if(!iscodepen())
+   o.headers={"Cache-Control":"no-cache"}
+  
   return o;
 }
 
@@ -165,8 +168,6 @@ el.onchange=(ev)=>{
   }//  
 }
 
-
-  
   
   
   </script>
